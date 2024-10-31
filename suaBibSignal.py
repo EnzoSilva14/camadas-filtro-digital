@@ -29,7 +29,7 @@ class signalMeu:
         plt.xlabel('Frequência (Hz)')
         plt.ylabel('Magnitude')
         plt.grid()
-        plt.xlim(0,2200)
+        plt.xlim(0,2500)
         plt.show(block = False)
 
     def filtro_passa_baixa(self, signal):
@@ -46,7 +46,7 @@ class signalMeu:
             y[k] = - d* y[k - 1] - e * y[k - 2] + a * signal[k - 1] + b * signal[k - 2]
         return y
     
-    def butter_lowpass_filter(self, data, cutoff, fs, order=15):
+    def butter_lowpass_filter(self, data, cutoff, fs, order=17):
         # Cria um filtro passa-baixa Butterworth
         nyquist = 0.5 * fs  # Frequência de Nyquist
         normal_cutoff = cutoff / nyquist
