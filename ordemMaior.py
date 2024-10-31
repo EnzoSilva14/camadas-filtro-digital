@@ -55,7 +55,8 @@ def main():
        
     ## Calcule e plote o Fourier do sinal audio. como saída tem-se a amplitude e as frequências.
     
-    filtrado = signal.filtro_passa_baixa(dados)
+    # filtrado = signal.filtro_passa_baixa(dados)
+    filtrado = signal.butter_lowpass_filter(dados, 1500, freqDeAmostragem)
     # ------------- PLOTA FOURRIER ANTES -----------#
     signal.plotFFT(dados, freqDeAmostragem)
     plt.title("Fourrier antes do filtro")
